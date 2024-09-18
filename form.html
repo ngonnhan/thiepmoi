@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Mời</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1 class="form-title">Điền tên giúp Ngọc Nhẫn nha!!!</h1>
+        <form action="invitation.html" method="get" class="form-content">
+            <label for="name">Nhập tên của bạn nha:</label>
+            <input type="text" id="name" name="name" placeholder="Nhập tên của bạn vào đây" required>
+            
+            <label for="gender">Chọn giới tính:</label>
+            <div class="gender-options">
+                <button type="button" class="gender-button" id="maleButton" data-gender="anh">Nam</button>
+                <button type="button" class="gender-button" id="femaleButton" data-gender="chị">Nữ</button>
+            </div>
+            
+            <label for="age">Nhập tuổi của bạn:</label>
+            <input type="number" id="age" name="age" placeholder="Nhập tuổi của bạn" required>
+            
+            <input type="hidden" id="gender" name="gender">
+            
+            <button type="submit" class="submit-button">Gửi</button>
+        </form>
+    </div>
+    
+    <script src="form.js"></script>
+</body>
+</html>
