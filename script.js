@@ -6,11 +6,11 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let i = 0; i < starCount; i++) {
         const star = document.createElement('div');
         star.classList.add('star');
-        
+
         // Vị trí ngẫu nhiên
         star.style.top = Math.random() * 100 + 'vh';
         star.style.left = Math.random() * 100 + 'vw';
-        
+
         // Kích thước và tốc độ lấp lánh ngẫu nhiên
         star.style.width = star.style.height = Math.random() * 3 + 'px';
         star.style.animationDuration = Math.random() * 3 + 2 + 's';
@@ -40,12 +40,26 @@ document.addEventListener("DOMContentLoaded", function() {
     const urlParams = new URLSearchParams(window.location.search);
     const name = urlParams.get('name');
     const gender = urlParams.get('gender');
+    const age = parseInt(urlParams.get('age'));
+
+    let xungHo, xungEm;
+
+    if (age < 23) {
+        xungHo = 'em';
+        xungEm = gender === 'anh' ? 'chị' : 'em';
+    } else if (age > 23) {
+        xungHo = gender === 'anh' ? 'anh' : 'chị';
+        xungEm = 'em';
+    } else {
+        xungHo = 'bạn';
+        xungEm = 'tôi';
+    }
 
     const lines = [
-        `Xin chào ${gender} ${name}, ${gender === 'anh' ? 'em' : 'là'} Ngọc Nhẫn nè. Khi mọi người quét mã QR này chắc cũng đã nhận được và đang đọc những dòng tâm tình của ${gender === 'anh' ? 'em' : 'chị'}!`,
-        "Em rất vui vì được mời mọi người đến tham dự Lễ Tốt Nghiệp của em. Sau 4 năm học tập chăm chỉ, thì ngày mai em đã chính thức được khoác lên người chiếc áo cử nhân và mở ra một trang sách mới trong hành trình của em.",
-        "Ngày 25/09/2024 vào lúc 16h em hi vọng mọi người có thể cho em xin chút xíu xiu thời gian quý báu của mọi người để đến dự lễ TN của em và chụp với em một tấm hình nha. Sự hiện diện của mọi người giúp ngày Lễ của em trở nên đặc biệt và có ý nghĩa hơn.",
-        "Cuối lời, em hi vọng khi mọi người đọc đến đây, có thể thấy được tất cả tấm lòng của em và sắp xếp thời gian của mình để ngày hôm đó đến chúc mừng và chung vui cùng em nha. Em cám ơn mọi người.",
+        `Xin chào ${xungHo} ${name}, ${xungEm} Ngọc Nhẫn nè. Khi mọi người quét mã QR này chắc cũng đã nhận được và đang đọc những dòng tâm tình của ${xungEm}!`,
+        `${xungEm.charAt(0).toUpperCase() + xungEm.slice(1)} rất vui vì được mời mọi người đến tham dự Lễ Tốt Nghiệp của ${xungEm}. Sau 4 năm học tập chăm chỉ, thì ngày mai ${xungEm} đã chính thức được khoác lên người chiếc áo cử nhân và mở ra một trang sách mới trong hành trình của ${xungEm}.`,
+        `Ngày 25/09/2024 vào lúc 16h ${xungEm} hi vọng mọi người có thể cho ${xungEm} xin chút xíu xiu thời gian quý báu của mọi người để đến dự lễ TN của ${xungEm} và chụp với ${xungEm} một tấm hình nha. Sự hiện diện của mọi người giúp ngày Lễ của ${xungEm} trở nên đặc biệt và có ý nghĩa hơn.`,
+        `Cuối lời, ${xungEm} hi vọng khi mọi người đọc đến đây, có thể thấy được tất cả tấm lòng của ${xungEm} và sắp xếp thời gian của mình để ngày hôm đó đến chúc mừng và chung vui cùng ${xungEm} nha. ${xungEm.charAt(0).toUpperCase() + xungEm.slice(1)} cám ơn mọi người.`,
         "Love all."
     ];
 
