@@ -93,7 +93,7 @@ body {
 
 .typewriter {
     font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
+    font-size: 1.5rem; /* Cập nhật kích thước chữ cho dễ đọc */
     color: #000;
     white-space: pre-wrap;
     overflow-wrap: break-word;
@@ -116,17 +116,14 @@ body {
 
 .title {
     font-family: 'Playfair Display', serif;
-    font-size: 3vw; /* Sử dụng đơn vị vw để tự động điều chỉnh kích thước */
+    font-size: 1.5rem;
     font-weight: bold;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    text-align: center; /* Căn giữa */
     margin-bottom: 20px;
-    text-align: center; /* Căn giữa chữ */
+    padding: 0 10px; /* Padding để tránh che viền */
     opacity: 0;
     animation: fadeIn 3s forwards;
 }
-
 
 @keyframes blink-caret {
     from, to { border-color: transparent; }
@@ -139,25 +136,18 @@ body {
 }
 
 /* Responsive Styles */
-@media (max-width: 1200px) {
-    .invitation-container,
-    .invitation-card {
-        width: 100%;
-        padding: 10px;
-    }
-}
-
 @media (max-width: 900px) {
     .invitation-card {
         padding: 10px;
     }
 
     .title {
-        font-size: 1.2rem;
+        font-size: 1.2rem; /* Giảm kích thước cho màn hình nhỏ */
+        padding: 0 5px; /* Giảm padding cho màn hình nhỏ */
     }
 
     .typewriter {
-        font-size: 1rem;
+        font-size: 1rem; /* Giảm kích thước cho màn hình nhỏ */
     }
 }
 
@@ -167,15 +157,14 @@ body {
     }
 
     .title {
-        font-size: 1rem;
+        font-size: 1rem; /* Kích thước chữ nhỏ hơn */
     }
 
     .typewriter {
-        font-size: 0.9rem;
+        font-size: 0.9rem; /* Kích thước chữ nhỏ hơn */
     }
 
     .graduation-hat {
         width: 80px;
     }
 }
-
