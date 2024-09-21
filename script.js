@@ -56,12 +56,12 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     const lines = [
-        `Xin chào ${xungHo} ${name}, ${xungEm} Ngọc Nhẫn nè. Khi mọi người quét mã QR này chắc cũng đã nhận được và đang đọc những dòng tâm tình của ${xungEm}!`,
-        `${xungEm.charAt(0).toUpperCase() + xungEm.slice(1)} rất vui vì được mời mọi người đến tham dự Lễ Tốt Nghiệp của ${xungEm}. Sau 4 năm học tập chăm chỉ, thì ngày mai ${xungEm} đã chính thức được khoác lên người chiếc áo cử nhân và mở ra một trang sách mới trong hành trình của ${xungEm}.`,
-        `Ngày 25/09/2024 vào lúc 16h ${xungEm} hi vọng mọi người có thể cho ${xungEm} xin chút xíu xiu thời gian quý báu của mọi người để đến dự lễ TN của ${xungEm} và chụp với ${xungEm} một tấm hình nha. Sự hiện diện của mọi người giúp ngày Lễ của ${xungEm} trở nên đặc biệt và có ý nghĩa hơn.`,
-        `Cuối lời, ${xungEm} hi vọng khi mọi người đọc đến đây, có thể thấy được tất cả tấm lòng của ${xungEm} và sắp xếp thời gian của mình để ngày hôm đó đến chúc mừng và chung vui cùng ${xungEm} nha. ${xungEm.charAt(0).toUpperCase() + xungEm.slice(1)} cám ơn mọi người.`,
-        "Love all."
-    ];
+    `Xin chào ${xungHo} ${name}, ${xungEm} Ngọc Nhẫn nè. Khi mọi người quét mã QR này chắc cũng đã nhận được và đang đọc những dòng tâm tình của ${xungEm}!`,
+    `${xungEm.charAt(0).toUpperCase() + xungEm.slice(1)} rất vui vì được mời mọi người đến tham dự Lễ Tốt Nghiệp của ${xungEm}. Sau 4 năm học tập chăm chỉ, thì ngày mai ${xungEm} đã chính thức được khoác lên người chiếc áo cử nhân và mở ra một trang sách mới trong hành trình của ${xungEm}.`,
+    `Ngày 25/09/2024 vào lúc 16h ${xungEm} hi vọng mọi người có thể cho ${xungEm} xin chút xíu xiu thời gian quý báu của mọi người để đến dự lễ TN của ${xungEm} và chụp với ${xungEm} một tấm hình nha. Sự hiện diện của mọi người giúp ngày Lễ của ${xungEm} trở nên đặc biệt và có ý nghĩa hơn.`,
+    `Cuối lời, ${xungEm} hi vọng khi mọi người đọc đến đây, có thể thấy được tất cả tấm lòng của ${xungEm} và sắp xếp thời gian của mình để ngày hôm đó đến chúc mừng và chung vui cùng ${xungEm} nha. ${xungEm.charAt(0).toUpperCase() + xungEm.slice(1)} cám ơn mọi người.`,
+    "Love all."
+];
 
     let lineIndex = 0;
     let charIndex = 0;
