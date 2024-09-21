@@ -1,6 +1,24 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const genderButtons = document.querySelectorAll('.gender-button');
-    const genderInput = document.getElementById('gender');
+document.addEventListener("DOMContentLoaded", function() {
+    const starCount = 100; // Số lượng ngôi sao
+    const body = document.body;
+
+    // Tạo sao lấp lánh
+    for (let i = 0; i < starCount; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        
+        // Vị trí ngẫu nhiên
+        star.style.top = Math.random() * 100 + 'vh';
+        star.style.left = Math.random() * 100 + 'vw';
+        
+        // Kích thước và tốc độ lấp lánh ngẫu nhiên
+        star.style.width = star.style.height = Math.random() * 3 + 'px';
+        star.style.animationDuration = Math.random() * 3 + 2 + 's';
+
+        body.appendChild(star);
+    }
+});
+
     
     genderButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -22,4 +40,4 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Vui lòng chọn giới tính!');
         }
     });
-});
+
