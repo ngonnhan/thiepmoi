@@ -116,15 +116,17 @@ body {
 
 .title {
     font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
+    font-size: 3vw; /* Sử dụng đơn vị vw để tự động điều chỉnh kích thước */
     font-weight: bold;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     margin-bottom: 20px;
+    text-align: center; /* Căn giữa chữ */
     opacity: 0;
     animation: fadeIn 3s forwards;
 }
+
 
 @keyframes blink-caret {
     from, to { border-color: transparent; }
