@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // Tạo sao lấp lánh
     const starCount = 100; // Số lượng ngôi sao
     const body = document.body;
 
-    // Tạo sao lấp lánh
     for (let i = 0; i < starCount; i++) {
         const star = document.createElement('div');
         star.classList.add('star');
@@ -17,22 +17,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
         body.appendChild(star);
     }
-});
 
+    // Phần chọn giới tính
+    const genderButtons = document.querySelectorAll('.gender-button');
+    const genderInput = document.getElementById('gender');
     
     genderButtons.forEach(button => {
         button.addEventListener('click', function() {
-            // Remove 'active' class from all buttons
+            // Xóa lớp 'active' từ tất cả các nút
             genderButtons.forEach(btn => btn.classList.remove('active'));
             
-            // Add 'active' class to the clicked button
+            // Thêm lớp 'active' cho nút đã nhấp
             this.classList.add('active');
             
-            // Set the value of the hidden input to the selected gender
+            // Đặt giá trị của trường ẩn thành giới tính đã chọn
             genderInput.value = this.getAttribute('data-gender');
         });
     });
-    
+
     const form = document.getElementById('invitationForm');
     form.addEventListener('submit', function(event) {
         if (!genderInput.value) {
@@ -40,4 +42,4 @@ document.addEventListener("DOMContentLoaded", function() {
             alert('Vui lòng chọn giới tính!');
         }
     });
-
+});
