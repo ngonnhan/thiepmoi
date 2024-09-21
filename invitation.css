@@ -118,11 +118,13 @@ body {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     font-weight: bold;
-    text-align: center; /* Căn giữa */
+    white-space: normal; /* Cho phép xuống dòng */
+    overflow: hidden;
+    text-overflow: ellipsis;
     margin-bottom: 20px;
-    padding: 0 10px; /* Padding để tránh che viền */
     opacity: 0;
     animation: fadeIn 3s forwards;
+    text-align: center; /* Căn giữa văn bản */
 }
 
 @keyframes blink-caret {
