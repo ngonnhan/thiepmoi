@@ -14,4 +14,12 @@ document.addEventListener('DOMContentLoaded', function() {
             genderInput.value = this.getAttribute('data-gender');
         });
     });
+    
+    const form = document.getElementById('invitationForm');
+    form.addEventListener('submit', function(event) {
+        if (!genderInput.value) {
+            event.preventDefault(); // Ngăn chặn gửi nếu giới tính chưa được chọn
+            alert('Vui lòng chọn giới tính!');
+        }
+    });
 });

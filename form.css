@@ -3,14 +3,48 @@
 body {
     margin: 0;
     padding: 0;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background: url(/img/nenform.jfif) no-repeat center center fixed;
-    background-size: cover;
-    font-family: 'Roboto', sans-serif;
+    background-color: #000; /* Nền màu đen */
+    overflow: hidden;
+    position: relative;
 }
+
+.form-container {
+    background: rgba(173, 216, 230, 0.9);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    z-index: 10; /* Để nổi bật hơn so với nền */
+}
+
+/* Hiệu ứng ngôi sao lấp lánh */
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+    animation: twinkle 5s infinite ease-in-out alternate;
+}
+
+@keyframes twinkle {
+    from {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 
 .form-container {
     background: rgba(173, 216, 230, 0.9);

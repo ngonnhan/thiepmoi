@@ -1,22 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
 body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    background: url(/img/nenkhung.jpg) no-repeat center center fixed;
-    background-size: cover;
+    background-color: #000; /* Nền màu đen */
+    overflow: hidden;
+    position: relative;
     font-family: 'Arial', sans-serif;
 }
 
+/* Cấu trúc cho invitation */
 .invitation-container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 90%;
     max-width: 900px;
+    position: relative;
+    z-index: 10; /* Để nổi bật hơn so với nền */
 }
 
 .invitation-card {
@@ -35,15 +40,55 @@ body {
     border-radius: 15px;
     padding: 20px;
     position: relative;
-    background-image: url(/img/nenkhung.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
     min-height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+/* Hiệu ứng ngôi sao lấp lánh */
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+    animation: twinkle 5s infinite ease-in-out alternate;
+}
+
+@keyframes twinkle {
+    from {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Hiệu ứng sao băng */
+.shooting-star {
+    position: absolute;
+    top: 0;
+    width: 2px;
+    height: 10px;
+    background: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    animation: shooting 1s linear forwards;
+}
+
+@keyframes shooting {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) translateX(50vw);
+        opacity: 0;
+    }
 }
 
 .typewriter {
@@ -66,6 +111,7 @@ body {
     transform: translateX(-50%);
     width: 100px;
     height: auto;
+    background: black; /* Đổi thành màu đen cho nón */
 }
 
 .title {
@@ -88,56 +134,6 @@ body {
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
-}
-
-.heart-container {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 50vh;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: 10;
-}
-
-.heart {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    background: red;
-    transform: rotate(-45deg);
-    animation: heartFly 4s ease-in forwards;
-}
-
-.heart::before,
-.heart::after {
-    content: "";
-    width: 20px;
-    height: 20px;
-    background: red;
-    border-radius: 50%;
-    position: absolute;
-}
-
-.heart::before {
-    top: -10px;
-    left: 0;
-}
-
-.heart::after {
-    top: 0;
-    left: 10px;
-}
-
-@keyframes heartFly {
-    0% {
-        transform: translateY(100vh) rotate(-45deg);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-100vh) rotate(-45deg);
-        opacity: 0;
-    }
 }
 
 /* Responsive Styles */
@@ -179,9 +175,5 @@ body {
     .graduation-hat {
         width: 80px;
     }
-
-    .heart {
-        width: 15px;
-        height: 15px;
-    }
 }
+
